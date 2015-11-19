@@ -28,6 +28,10 @@ angular.module('starter', ['ionic'])
       url: '/',
       templateUrl: 'templates/login.html'
   })
+  .state('home', {
+      url: '/home',
+      templateUrl: 'templates/home.html'
+  })
     
   
   // if none of the above states are matched, use this as the fallback
