@@ -29,7 +29,6 @@ module.exports = function(app) {
 
    // delete user
   app.delete('/uberParty/users/:id', function(req, res) {
-    id = mongoose.Types.ObjectId(req.params.id);
     User.remove({
       _id: req.params.id
     }, function(err, user) {
@@ -40,10 +39,10 @@ module.exports = function(app) {
   });
 
   // update user
-  app.put('/api/users/:id', function(req, res){
+  app.put('/uberParty/users/:id', function(req, res){
     User.update({
-        _id: req.params.user_id
-    }, {$set: {speudo: req.body.username,
+      _id: req.params.id
+    }, {$set: {pseudo: req.body.pseudo,
               password: req.body.password},
         $inc: {__v: 1}
     }, {overwrite: true}, function(err){
@@ -52,6 +51,7 @@ module.exports = function(app) {
       res.status(200).end();
     })
   });
+
 
 // //checkUser
 //   app.post('/api/login', function(req, res) {
