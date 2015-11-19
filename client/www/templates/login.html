@@ -1,22 +1,24 @@
-<ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
-      </div>
-    </form>
+<ion-view view-title="login">
+   <ion-content>
+   <h1>Connexion</h1>
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-4">
+            <label class="control-label">Pseudo</label>
+            <input type="text" class="form-control" id="" placeholder="" ng-model="pseudo">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-4">
+            <label class="control-label">Mot de passe</label>
+            <input type="text" class="form-control" id="" placeholder="" ng-model="password">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-6">
+           <a href="/#/home">
+            <button type="submit" class="btnW" ><strong>Connexion</strong></button>
+            </a>
+        </div>
+    </div>
   </ion-content>
-</ion-modal-view>
+</ion-view>
