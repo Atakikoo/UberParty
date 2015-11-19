@@ -40,10 +40,15 @@ module.exports = function(app) {
 
   // update user  !!!!!problem with update if one key is empty/undefined
   app.put('/uberParty/users/:user_id', function(req, res){
+    var data = {};
+    if (req.body.pseudo)
+      data.pseudo = req.body.pseudo;
+    if (req.body.password)
+      data.password = req.body.password;
+
     User.update({
       _id: req.params.user_id
-    }, {$set: {pseudo: req.body.pseudo,
-              password: req.body.password},
+    }, {$set: data,
         $inc: {__v: 1}
     }, {overwrite: true}, function(err){
       if (err)
