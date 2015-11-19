@@ -1,5 +1,6 @@
 var User = require('../models/user.js');
 var Party = require('../models/party.js');
+var mongoose = require('mongoose');
 
 module.exports = function(app) {
 
@@ -17,9 +18,8 @@ module.exports = function(app) {
   // create user
   app.post('/uberParty/users', function(req, res) {
     User.create({
-      speudo: req.body.speudo,
+      pseudo: req.body.pseudo,
       password: req.body.password,
-      type: "user"
     }, function(err, user) {
       if (err)
         res.send(err);
@@ -27,30 +27,31 @@ module.exports = function(app) {
     });
   });
 
-//   // delete user
-//   app.delete('/uberParty/users/:user_id', function(req, res) {
-//     User.remove({
-//       _id: req.params.user_id
-//     }, function(err, user) {
-//       if(err)
-//         res.send(err);
-//       res.status(200).end();
-//     })
-//   });
+   // delete user
+  app.delete('/uberParty/users/:id', function(req, res) {
+    id = mongoose.Types.ObjectId(req.params.id);
+    User.remove({
+      _id: req.params.id
+    }, function(err, user) {
+      if(err)
+        res.send(err);
+      res.status(200).end();
+    })
+  });
 
-//   // update user
-//   app.put('/api/users/:user_id', function(req, res){
-//     User.update({
-//         _id: req.params.user_id
-//     }, {$set: {speudo: req.body.username,
-//               password: req.body.password},
-//         $inc: {__v: 1}
-//     }, {overwrite: true}, function(err){
-//       if (err)
-//         res.send(err);
-//       res.status(200).end();
-//     })
-//   });
+  // update user
+  app.put('/api/users/:id', function(req, res){
+    User.update({
+        _id: req.params.user_id
+    }, {$set: {speudo: req.body.username,
+              password: req.body.password},
+        $inc: {__v: 1}
+    }, {overwrite: true}, function(err){
+      if (err)
+        res.send(err);
+      res.status(200).end();
+    })
+  });
 
 // //checkUser
 //   app.post('/api/login', function(req, res) {

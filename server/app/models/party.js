@@ -12,5 +12,6 @@ module.exports = mongoose.model('Party', {
   toEat: [String],
   budget: Number,
   comment: String,
-  toBring: String
+  toBring: String,
+  inscription: [String] 
 });

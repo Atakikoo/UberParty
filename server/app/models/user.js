@@ -2,8 +2,8 @@
 
 var mongoose = require('mongoose');
 
-module.exports = mongoose.model('User', {
-  speudo: String,
-  password: String,
+module.exports = mongoose.model('User', {  
+  pseudo:  { type: String, required: true, unique: true },
+  password: { type: String, required: true },
   admin: Boolean
 });
