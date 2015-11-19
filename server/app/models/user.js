@@ -3,9 +3,7 @@
 var mongoose = require('mongoose');
 
 module.exports = mongoose.model('User', {
-  name: String,
-  lastname: String,
-  username: String,
+  speudo: String,
   password: String,
-  type: String
+  admin: Boolean
 });
