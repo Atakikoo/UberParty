@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 
-module.exports = mongoose.model('User', {
+module.exports = mongoose.model('Party', {
   name: String,
   lastname: String,
   username: String,

@@ -6,19 +6,13 @@ module.exports 	= function(app) {
   	var fs   = require('fs');
   	var path = require('path');
 
-  	fs.readdir('./app/controllers', loadControllers);
+  	fs.readdir('./app/routes', loadControllers);
 
 	function loadControllers(error, files) {
 		if (error)
 		  throw error;
 		else
 		  files.forEach(requireController);
-
-		// application -------------------------------------------------------------
-		app.get('*', function(req, res) {
-			res.sendFile(path.join(__dirname, '../../public', 'index.html')); // load the single view file (angular will handle the page changes on the front-end)
-		});
-
 	}
 
 	function requireController(file) {
