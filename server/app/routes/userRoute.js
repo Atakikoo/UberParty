@@ -28,7 +28,7 @@ module.exports = function(app) {
   });
 
    // delete user
-  app.delete('/uberParty/users/:id', function(req, res) {
+  app.delete('/uberParty/users/:user_id', function(req, res) {
     User.remove({
       _id: req.params.id
     }, function(err, user) {
@@ -39,9 +39,9 @@ module.exports = function(app) {
   });
 
   // update user
-  app.put('/uberParty/users/:id', function(req, res){
+  app.put('/uberParty/users/:user_id', function(req, res){
     User.update({
-      _id: req.params.id
+      _id: req.params.user_id
     }, {$set: {pseudo: req.body.pseudo,
               password: req.body.password},
         $inc: {__v: 1}
