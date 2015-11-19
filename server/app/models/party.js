@@ -13,5 +13,8 @@ module.exports = mongoose.model('Party', {
   budget: Number,
   comment: String,
   toBring: String,
-  inscription: [String] 
+  inscription: [String],
+  paid: [String],
+  planer: [String]
+  price: [{ body: String, total: Number}]
 });

@@ -7,13 +7,13 @@ module.exports = function(app) {
   /*-----USER CRUD-----*/
 
     // get all users
-  //   app.get('/uberParty/users', function(req, res) {
-  //   User.find(function(err, users) {
-  //     if (err)
-  //       res.send(err);
-  //     res.json(users);
-  //   });
-  // });
+    app.get('/uberParty/users', function(req, res) {
+    User.find(function(err, users) {
+      if (err)
+        res.send(err);
+      res.json(users);
+    });
+  });
 
   // create user
   app.post('/uberParty/users', function(req, res) {
@@ -38,7 +38,7 @@ module.exports = function(app) {
     })
   });
 
-  // update user
+  // update user  !!!!!problem with update if one key is empty/undefined
   app.put('/uberParty/users/:user_id', function(req, res){
     User.update({
       _id: req.params.user_id
@@ -52,16 +52,4 @@ module.exports = function(app) {
     })
   });
 
-
-// //checkUser
-//   app.post('/api/login', function(req, res) {
-//     User.find({
-//       username: req.body.username,
-//       password: req.body.pwd
-//     }, function(err, user){
-//       if (err || user.length == 0)
-//           res.status(404).end();
-//       res.status(200).end();
-//     })
-//   });
 }
