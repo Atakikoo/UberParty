@@ -39,7 +39,7 @@ module.exports = function(app) {
     })
   });
 
-  // update user  !!!!!problem with update if one key is empty/undefined
+  // update user 
   app.put('/uberParty/users/:user_id', function(req, res){
     var data = {};
     if (req.body.pseudo)
