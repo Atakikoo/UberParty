@@ -1,5 +1,76 @@
-<ion-view view-title="+Apero">
+<ion-view view-title="Créer une soirée">
   <ion-content>
-    <h1>create</h1>
+    <h2>Créer une soirée</h2>
+
+
+<div class="">
+
+	<form class="form-horizontal">
+        
+		
+		<div class="form-group">
+            <div class="col-sm-offset-1 col-sm-4">
+               <label class="control-label">Nom de la soirée :</label>
+		      <input type="text" class="form-control" id="" placeholder="" ng-model="name">
+		  </div>
+        
+		    <div class="col-sm-offset-1 col-sm-4">
+               <label class="control-label">Date de la soirée :</label>
+		      <input type="text" class="form-control" id="" placeholder=""ng-model="date">
+		  </div>
+		</div>
+		
+		<div class="form-group">
+		    <div class="col-sm-offset-1 col-sm-4">
+               <label class="control-label">organisateur :</label>
+		    <input type="text" class="form-control" id="" placeholder="" ng-model="promoter">
+		  </div>
+        <div class="col-sm-offset-1 col-sm-4">
+               <label class="control-label">nombre de places :</label>
+		    <input type="text" class="form-control" id="" placeholder="" ng-model="nblace">
+		  </div>
+        </div>
+		
+		<div class="form-group">
+            <div class="col-sm-offset-1 col-sm-9">
+                <label>Description de la soirée :</label>            
+                <textarea class="form-control" rows="3" ng-model="description"></textarea>
+            </div>
+        </div>
+		<h2>Prix de la soirée</h2>
+        <div class="form-group">
+		    <div class="col-sm-offset-1 col-sm-4">
+               <label class="control-label">soft :</label>
+		    <input type="text" class="form-control" id="" placeholder="prix par personnes en Euros" ng-model="softPrice">
+		  </div>
+           <div class="col-sm-offset-1 col-sm-4">
+               <label class="control-label">alcool :</label>
+		    <input type="text" class="form-control" id="" placeholder="prix par personnes en Euros" ng-model="alcoholPrice">
+		  </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-4">
+               <label class="control-label">repas :</label>
+		    <input type="text" class="form-control" id="" placeholder="prix par personnes en Euros" ng-model="toEatPrice">
+		  </div>
+      
+       </div>
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-4">
+        <input type="checkbox" ng-model="referent" checked/>
+           Ou sinon laisser un prix libre par personnes 
+        </div>    
+       </div>
+    </form>
+    
+    <div class="form-group">
+        <div class="col-sm-offset-5">
+            <button type="submit" class="btnW" ng-click="send()"><strong>Valider</strong></button>
+        </div>
+        
+    </div>
+    
+</div>
   </ion-content>
 </ion-view>
