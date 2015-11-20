@@ -1,5 +1,6 @@
 var User = require('../models/user.js');
 var Party = require('../models/party.js');
+var registration = require('../models/registration.js');
 var mongoose = require('mongoose');
 
 module.exports = function(app) {

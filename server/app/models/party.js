@@ -3,17 +3,22 @@
 var mongoose = require('mongoose');
 
 module.exports = mongoose.model('Party', {
-  date: Date,
-  name: String,
-  description: String,
+  photo: String,
+  planer: { type: String, required: true},
+  date: Date, // hour can be put with the datepicker
+  name: { type: String, required: true},
+  description: { type: String, required: true},
   nbPlace: Number,
   soft: [String],
+  softPrice: Number,
   alcohol: [String],
+  alcoholPrice: Number,
   toEat: [String],
+  ToEatPrice: Number,
+  freePrice: Number,
   budget: Number,
-  comment: String,
-  toBring: String,
-  inscription: [String],
-  paid: [String],
-  planer: [String]
+  comment: [String],
+  toBring: [String],
+  registration: [String],
+  paid: [String]
 });
