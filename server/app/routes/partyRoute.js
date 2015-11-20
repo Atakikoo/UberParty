@@ -9,7 +9,7 @@ module.exports = function(app) {
 
    // get all users
     app.get('/uberParty/parties', function(req, res) {
-    User.find(function(err, parties) {
+    Party.find(function(err, parties) {
       if (err)
         res.send(err);
       res.json(parties);
@@ -37,7 +37,7 @@ module.exports = function(app) {
   });
 
     // delete party
-  app.delete('/uberParty/parties/:party_id', function(req, res) {
+  app.delete('/uberParty/parties/:id', function(req, res) {
     Party.remove({
       _id: req.params.id
     }, function(err, party) {
@@ -48,7 +48,7 @@ module.exports = function(app) {
   });
 
   // update user 
-  app.put('/uberParty/parties/:party_id', function(req, res){
+  app.put('/uberParty/parties/:id', function(req, res){
     var data = {};
     if (req.body.photo)
       data.photo = req.body.photo;
@@ -58,6 +58,8 @@ module.exports = function(app) {
       data.description = req.body.description;
     if (req.body.softPrice)
       data.softPrice = req.body.softPrice;
+    if (req.body.nbPlace)
+      data.nbPlace = req.body.nbPlace;
   	if (req.body.alcoholPrice)
       data.alcoholPrice = req.body.alcoholPrice;
   	if (req.body.toEatPrice)
@@ -65,8 +67,8 @@ module.exports = function(app) {
   	if (req.body.freePrice)
       data.freePrice = req.body.freePrice;
 
-    User.update({
-      _id: req.params.user_id
+    Party.update({
+      _id: req.params.id
     }, {$set: data,
         $inc: {__v: 1}
     }, {overwrite: true}, function(err){

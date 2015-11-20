@@ -66,8 +66,8 @@ module.exports = function(app) {
     })
   });
 
-  // update user 
-  app.put('/uberParty/parties/:party_id', function(req, res){
+  // update registration
+  app.put('/uberParty/registration/:party_id', function(req, res){
     var data = {};
     if (req.body.soft)
       data.soft = req.body.soft;
@@ -84,7 +84,7 @@ module.exports = function(app) {
   	if (req.body.freePrice)
       data.freePrice = req.body.freePrice;
 
-    User.update({
+    Registration.update({
       _id: req.params.user_id
     }, {$set: data,
         $inc: {__v: 1}

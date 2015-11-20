@@ -6,11 +6,9 @@ module.exports = mongoose.model('Registration', {
   soft: [String],
   alcohol: [String],
   toEat: [String],
-  freePrice: Number,
-  budget: Number,
-  comment: [String],
-  toBring: [String],
+  freePrice: Boolean,
+  // comment: [String],
+  // toBring: [String],
   registration: [String],
   paid: [String],
-  morePeople: [Number]
 });

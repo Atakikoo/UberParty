@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 
 module.exports = mongoose.model('Party', {
-  photo: String,
+  //photo: String,
   promoter: { type: String, required: true},
   date: Date, // hour can be put with the datepicker
   name: { type: String, required: true},
@@ -15,7 +15,7 @@ module.exports = mongoose.model('Party', {
   alcoholPrice: Number,
   toEat: [String],
   toEatPrice: Number,
-  freePrice: Number,
+  freePrice: Boolean,
   budget: Number,
   comment: [String],
   toBring: [String],
