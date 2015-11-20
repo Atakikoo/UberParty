@@ -22,3 +22,5 @@ module.exports = mongoose.model('Party', {
   registration: [String],
   paid: [String]
 });
+
+// miaou
