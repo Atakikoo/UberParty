@@ -1,4 +1,4 @@
-function connectRecruiterController($scope, createService, $location,){
+function createController( $scope, createService, $location ){
     
     $scope.send = function(){
 		var data = {};
@@ -15,7 +15,7 @@ function connectRecruiterController($scope, createService, $location,){
         createService.create(data).then(function(res){
             
             if (!res.data){
-				alert("pseudo ou mot de passe incorrect");
+				alert("ich bin hein a grosse erreur");
 				$location.path('/create');
 			}
 			//ERREUR

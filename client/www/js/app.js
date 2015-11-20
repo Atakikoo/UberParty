@@ -41,7 +41,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: '/create',
       views: {
         'menuContent': {
-          templateUrl: 'templates/create.html'
+          templateUrl: 'templates/create.html',
+            controller: 'createController'
         }
       }
     })
