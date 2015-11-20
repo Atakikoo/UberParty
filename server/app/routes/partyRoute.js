@@ -66,6 +66,10 @@ module.exports = function(app) {
       data.toEatPrice = req.body.toEatPrice;
   	if (req.body.freePrice)
       data.freePrice = req.body.freePrice;
+    if (req.body.registration)
+      data.registration = req.body.registration;
+    if (req.body.paid)
+      data.paid = req.body.paid;
 
     Party.update({
       _id: req.params.id
