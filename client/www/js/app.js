@@ -1,10 +1,6 @@
 // Ionic Starter App
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic'])
+angular.module('starter', ['ionic', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -12,6 +8,7 @@ angular.module('starter', ['ionic'])
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
 
     }
     if (window.StatusBar) {
@@ -24,16 +21,59 @@ angular.module('starter', ['ionic'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
- .state('login', {
-      url: '/',
-      templateUrl: 'templates/login.html'
+    .state('app', {
+    url: '/app',
+    abstract: true,
+    templateUrl: 'templates/menu.html',
+    controller: 'AppCtrl'
   })
-  .state('home', {
-      url: '/home',
-      templateUrl: 'templates/home.html'
+
+  .state('app.login', {
+    url: '/login',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/login.html'
+      }
+    }
   })
-    
-  
+
+  .state('app.create', {
+      url: '/create',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/create.html'
+        }
+      }
+    })
+
+    .state('app.parties', {
+      url: '/parties',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/parties.html',
+          controller: 'partiesCtrl'
+        }
+      }
+    })
+
+  .state('app.modifyParties', {
+      url: '/modifyParties',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modifyParties.html'
+        }
+      }
+    })
+
+  .state('app.profil', {
+      url: '/profil',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/profil.html'
+        }
+      }
+    })
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/app/parties');
 });
