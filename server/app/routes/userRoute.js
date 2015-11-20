@@ -58,4 +58,16 @@ module.exports = function(app) {
     })
   });
 
+    //checkUser
+    app.post('/uberParty/login', function(req, res) {
+    User.find({
+      pseudo: req.body.pseudo,
+      password: req.body.password
+    }, function(err, user){
+      if (err || user.length == 0)
+          res.status(404).end();
+      res.status(200).end();
+    })
+  });
+
 }

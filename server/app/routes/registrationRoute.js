@@ -67,7 +67,7 @@ module.exports = function(app) {
   });
 
   // update registration
-  app.put('/uberParty/registration/:party_id', function(req, res){
+  app.put('/uberParty/registration /:party_id', function(req, res){
     var data = {};
     if (req.body.soft)
       data.soft = req.body.soft;
