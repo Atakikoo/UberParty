@@ -11,12 +11,12 @@
 		<div class="form-group">
             <div class="col-sm-offset-1 col-sm-4">
                <label class="control-label">Nom de la soirée :</label>
-		      <input type="text" class="form-control" id="" placeholder="" ng-model="name">
+		      <input type="text" class="form-control" id="" placeholder="" ng-model="name" ng-model="required">
 		  </div>
         
 		    <div class="col-sm-offset-1 col-sm-4">
                <label class="control-label">Date de la soirée :</label>
-		      <input type="text" class="form-control" id="" placeholder=""ng-model="date">
+		      <input type="date" type="text" class="form-control" id="datePicker" placeholder="yyyy-MM-dd" min="date.now"required" ng-model="date" ng-model="required">
 		  </div>
 		</div>
 		
@@ -26,15 +26,15 @@
 		    <input type="text" class="form-control" id="" placeholder="" ng-model="promoter">
 		  </div>
         <div class="col-sm-offset-1 col-sm-4">
-               <label class="control-label">nombre de places :</label>
-		    <input type="text" class="form-control" id="" placeholder="" ng-model="nbPlace">
+               <label class="control-label">nombre de places (ou 00 pour illimité):</label>
+		    <input type="number" class="form-control" id="" placeholder="" ng-model="nbPlace" ng-model="required">
 		  </div>
         </div>
 		
 		<div class="form-group">
             <div class="col-sm-offset-1 col-sm-9">
                 <label>Description de la soirée :</label>            
-                <textarea class="form-control" rows="3" ng-model="description"></textarea>
+                <textarea class="form-control" rows="3" ng-model="description" ng-model="required"></textarea>
             </div>
         </div>
 		<h2>Prix de la soirée</h2>

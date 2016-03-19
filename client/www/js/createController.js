@@ -1,6 +1,16 @@
+
+
 function createController( $scope, createService, $location ){
     
-    $scope.send = function(){
+    // Date.prototype.toDateInputValue = function() {
+    //     var local = new Date(this);
+    //     local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+    //     return local.toJSON().slice(0,10);
+    // }; //end function
+
+    // document.getElementById('datePicker').valueAsDate = new Date();
+
+    function send(){
 		var data = {};
         data.name = $scope.name;
         data.date = $scope.date;
@@ -20,7 +30,11 @@ function createController( $scope, createService, $location ){
 			}
 			//ERREUR
 			else{
-				alert("soirée crée");
+				alert("soirée créé");
 			}
             
-        });
+         }); //end create service
+
+     } //end send function
+
+} //end controller

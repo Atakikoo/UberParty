@@ -47,5 +47,34 @@ angular.module('starter.controllers', [])
   // ];
 })
 
+.controller('createController', function( $scope, createService, $location ){
+    
+    $scope.send = function(){
+    var data = {};
+        data.name = $scope.name;
+        data.date = $scope.date;
+        data.promoter = $scope.promoter;
+        data.nbPlace = $scope.nbPlace;
+        data.description = $scope.description;
+        data.softPrice = $scope.softPrice;
+        data.alcoholPrice = $scope.alcoholPrice;
+        data.toEatPrice = $scope.toEatPrice;
+        data.price = $scope.price;
+        
+        createService.create(data).then(function(res){
+            
+            if (!res.data){
+        alert("ich bin hein a grosse erreur");
+        $location.path('/create');
+      }
+      //ERREUR
+      else{
+        alert("soirée crée");
+      }
+            
+        });
+      }
+  })
+
 .controller('partieCtrl', function($scope, $stateParams) {
 });

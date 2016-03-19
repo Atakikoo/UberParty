@@ -1,6 +1,6 @@
-function partieservice($http) {
+function createservice($http) {
   return {
-    post: function(data) {
+    create: function(data) {
       return $http.post('http://localhost:8080/uberParty/parties', data);
     },
     getAll: function() {
