@@ -1,6 +1,6 @@
-// Ionic Starter App
+// Ionic App
 
-angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
+angular.module('app', ['ionic', 'app.services', 'app.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -24,15 +24,15 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+    templateUrl: 'content/app/menu.html',
+    controller: 'appCtrl'
   })
 
   .state('app.login', {
     url: '/login',
     views: {
       'menuContent': {
-        templateUrl: 'templates/login.html'
+        templateUrl: 'content/login.html'
       }
     }
   })
@@ -41,7 +41,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
       url: '/create',
       views: {
         'menuContent': {
-          templateUrl: 'templates/create.html',
+          templateUrl: 'content/create/create.html',
             controller: 'createController'
         }
       }
@@ -51,7 +51,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
       url: '/parties',
       views: {
         'menuContent': {
-          templateUrl: 'templates/parties.html',
+          templateUrl: 'content/parties/parties.html',
           controller: 'partiesCtrl'
         }
       }
@@ -61,7 +61,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
       url: '/modifyParties',
       views: {
         'menuContent': {
-          templateUrl: 'templates/modifyParties.html'
+          templateUrl: 'content/modifyParties.html'
         }
       }
     })
@@ -70,7 +70,7 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers'])
       url: '/profil',
       views: {
         'menuContent': {
-          templateUrl: 'templates/profil.html'
+          templateUrl: 'content/profil.html'
         }
       }
     })

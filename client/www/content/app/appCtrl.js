@@ -1,7 +1,6 @@
-angular.module('starter.controllers', [])
-
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-
+function appCtrl( $scope, $ionicModal, $timeout ){
+    
+    
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -39,42 +38,6 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
-})
 
-.controller('partiesCtrl', function($scope) {
-  // $scope.playlists = [
-    
-  // ];
-})
 
-.controller('createController', function( $scope, createService, $location ){
-    
-    $scope.send = function(){
-    var data = {};
-        data.name = $scope.name;
-        data.date = $scope.date;
-        data.promoter = $scope.promoter;
-        data.nbPlace = $scope.nbPlace;
-        data.description = $scope.description;
-        data.softPrice = $scope.softPrice;
-        data.alcoholPrice = $scope.alcoholPrice;
-        data.toEatPrice = $scope.toEatPrice;
-        data.price = $scope.price;
-        
-        createService.create(data).then(function(res){
-            
-            if (!res.data){
-        alert("ich bin hein a grosse erreur");
-        $location.path('/create');
-      }
-      //ERREUR
-      else{
-        alert("soirée crée");
-      }
-            
-        });
-      }
-  })
-
-.controller('partieCtrl', function($scope, $stateParams) {
-});
+} //end controller

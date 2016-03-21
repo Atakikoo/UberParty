@@ -1,0 +1,2 @@
+function partyCtrl($scope, $stateParams) {
+};
