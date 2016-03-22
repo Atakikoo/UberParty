@@ -1,5 +1,3 @@
-
-
 function createController( $scope, createService, $location ){
     
     // Date.prototype.toDateInputValue = function() {

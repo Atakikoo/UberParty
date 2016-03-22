@@ -1,6 +1,6 @@
 // Ionic App
 
-angular.module('app', ['ionic', 'app.services', 'app.controllers'])
+var app = angular.module('app', ['ionic', 'app.services', 'app.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -32,7 +32,7 @@ angular.module('app', ['ionic', 'app.services', 'app.controllers'])
     url: '/login',
     views: {
       'menuContent': {
-        templateUrl: 'content/login.html'
+        templateUrl: 'content/login/login.html'
       }
     }
   })
@@ -42,7 +42,7 @@ angular.module('app', ['ionic', 'app.services', 'app.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'content/create/create.html',
-            controller: 'createController'
+            controller: 'createCtrl'
         }
       }
     })
@@ -61,7 +61,7 @@ angular.module('app', ['ionic', 'app.services', 'app.controllers'])
       url: '/modifyParties',
       views: {
         'menuContent': {
-          templateUrl: 'content/modifyParties.html'
+          templateUrl: 'content/modifyparties/modifyParties.html'
         }
       }
     })
@@ -70,7 +70,7 @@ angular.module('app', ['ionic', 'app.services', 'app.controllers'])
       url: '/profil',
       views: {
         'menuContent': {
-          templateUrl: 'content/profil.html'
+          templateUrl: 'content/profil/profil.html'
         }
       }
     })
