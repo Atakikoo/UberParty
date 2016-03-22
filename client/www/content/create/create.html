@@ -5,20 +5,31 @@
 
 <div class="">
 
-	<form class="form-horizontal">
+	<form class="form-horizontal" name="createPartyForm" ng-model="createPartyForm">
         
 		
 		<div class="form-group">
             <div class="col-sm-offset-1 col-sm-4">
-               <label class="control-label">Nom de la soirée :</label>
-		      <input type="text" class="form-control" id="" placeholder="" ng-model="name" ng-model="required">
-		  </div>
+               <label class="control-label">
+                  Nom de la soirée :</label>
+        		      <input type="text" 
+                      class="form-control" 
+                      id="" 
+                      placeholder="Donnez un nom à votre soirée" 
+                      ng-model="nameParty" 
+                      required>
+		        </div>
         
-		    <div class="col-sm-offset-1 col-sm-4">
-               <label class="control-label">Date de la soirée :</label>
-		      <input type="date" type="text" class="form-control" id="datePicker" placeholder="yyyy-MM-dd"  required ng-model="date">
-		  </div>
-		</div>
+    		    <div class="col-sm-offset-1 col-sm-4">
+                   <label class="control-label">Date de la soirée :</label>
+    		           <input
+                      type="date"
+                      class="form-control"
+                      placeholder="yyyy-MM-dd" 
+                      required 
+                      ng-model="date">
+    		    </div>
+		</div> <!-- end form group -->
 		
 		<div class="form-group">
 		    <div class="col-sm-offset-1 col-sm-4">
@@ -59,7 +70,7 @@
         <div class="form-group">
           <div class="col-sm-offset-1 col-sm-4">
         <input type="checkbox" ng-model="price" checked/>
-           Ou sinon laisser un prix libre par personnes 
+           Ou sinon laisser un prix libre par personne 
         </div>    
        </div>
     </form>

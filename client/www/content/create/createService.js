@@ -1,4 +1,4 @@
-function createservice($http) {
+function createService($http) {
   return {
     create: function(data) {
       return $http.post('http://localhost:8080/uberParty/parties', data);

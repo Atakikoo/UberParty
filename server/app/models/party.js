@@ -10,7 +10,7 @@ var partySchema = new mongoose.Schema({
       required: true
   },
   date: Date, // hour can be put with the datepicker
-  name: { type: String, required: true},
+  nameParty: { type: String, required: true},
   description: { type: String, required: true},
   nbPlace: Number,
   soft: [String],

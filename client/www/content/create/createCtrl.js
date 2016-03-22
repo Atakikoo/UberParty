@@ -1,4 +1,4 @@
-function createController( $scope, createService, $location ){
+function createCtrl( $scope, createService, $location ){
     
     // Date.prototype.toDateInputValue = function() {
     //     var local = new Date(this);
@@ -8,9 +8,10 @@ function createController( $scope, createService, $location ){
 
     // document.getElementById('datePicker').valueAsDate = new Date();
 
-    function send(){
+    $scope.send = function(){
+        debugger
 		var data = {};
-        data.name = $scope.name;
+        data.nameParty = $scope.nameParty;
         data.date = $scope.date;
         data.promoter = $scope.promoter;
         data.nbPlace = $scope.nbPlace;

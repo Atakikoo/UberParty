@@ -1,6 +1,6 @@
 // Ionic App
-
 var app = angular.module('app', ['ionic', 'app.services', 'app.controllers'])
+
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
