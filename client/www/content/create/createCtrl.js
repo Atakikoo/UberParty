@@ -7,29 +7,41 @@ function createCtrl( $scope, createService, $location ){
     // }; //end function
 
     // document.getElementById('datePicker').valueAsDate = new Date();
-
-    $scope.send = function(){
+    
+    $scope.createParty = function(party){
         debugger
-		var data = {};
-        data.nameParty = $scope.nameParty;
-        data.date = $scope.date;
-        data.promoter = $scope.promoter;
-        data.nbPlace = $scope.nbPlace;
-        data.description = $scope.description;
-        data.softPrice = $scope.softPrice;
-        data.alcoholPrice = $scope.alcoholPrice;
-        data.toEatPrice = $scope.toEatPrice;
-        data.price = $scope.price;
+        $scope.party = {
+            name: party.name,
+            date: party.date,
+            promoter: party.promoter,
+            nbPlace: party.nbPlace,
+            description: party.description,
+            softPrice: party.softPrice,
+            alcoholPrice: party.alcoholPrice,
+            toEatPrice: party.toEatPrice,
+            price: party.price
+        };
+        // data.name = $scope.name;
+        // data.date = $scope.date;
+        // data.promoter = $scope.promoter;
+        // data.nbPlace = $scope.nbPlace;
+        // data.description = $scope.description;
+        // data.softPrice = $scope.softPrice;
+        // data.alcoholPrice = $scope.alcoholPrice;
+        // data.toEatPrice = $scope.toEatPrice;
+        // data.price = $scope.price;
+
+        console.log(party);
         
-        createService.create(data).then(function(res){
+        createService.create(party).then(function(res){
             
-            if (!res.data){
-				alert("ich bin hein a grosse erreur");
-				$location.path('/create');
+            if (res.data != $error){
+                alert("soirée créé")
 			}
 			//ERREUR
 			else{
-				alert("soirée créé");
+                alert("ich bin hein a grosse erreur");
+                $location.path('/create');
 			}
             
          }); //end create service
@@ -37,21 +49,3 @@ function createCtrl( $scope, createService, $location ){
      } //end send function
 
 } //end controller
-
-// .factory('createService',  function($http){
-//   return {
-//     create: function(data) {
-//       return $http.post('http://localhost:8080/uberParty/parties', data);
-//     },
-//     getAll: function() {
-//       return $http.get('http://localhost:8080/uberParty/parties');
-//     },
-//     getOne: function(id) {
-//       return $http.get('http://localhost:8080/uberParty/parties/' + id);
-//     },
-//     updateAllOne: function(data) {
-//       return $http.put('http://localhost:8080/uberParty/parties/all', data);
-//     }
-//   }
-// }
-// );

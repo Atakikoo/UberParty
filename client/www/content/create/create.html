@@ -5,7 +5,7 @@
 
 <div class="">
 
-	<form class="form-horizontal" name="createPartyForm" ng-model="createPartyForm">
+	<form class="form-horizontal" name="party" ng-submit="createParty(party)">
         
 		
 		<div class="form-group">
@@ -16,7 +16,7 @@
                       class="form-control" 
                       id="" 
                       placeholder="Donnez un nom à votre soirée" 
-                      ng-model="nameParty" 
+                      ng-model="party.name" 
                       required>
 		        </div>
         
@@ -27,49 +27,49 @@
                       class="form-control"
                       placeholder="yyyy-MM-dd" 
                       required 
-                      ng-model="date">
+                      ng-model="party.date">
     		    </div>
 		</div> <!-- end form group -->
 		
 		<div class="form-group">
 		    <div class="col-sm-offset-1 col-sm-4">
                <label class="control-label">organisateur :</label>
-		    <input type="text" class="form-control" id="" placeholder="" ng-model="promoter">
+		    <input type="text" class="form-control" id="" placeholder="" ng-model="party.promoter">
 		  </div>
         <div class="col-sm-offset-1 col-sm-4">
                <label class="control-label">nombre de places (ou 00 pour illimité):</label>
-		    <input type="number" class="form-control" id="" placeholder="" ng-model="nbPlace" ng-model="required">
+		    <input type="number" class="form-control" id="" placeholder="" ng-model="party.nbPlace" ng-model="party.required">
 		  </div>
         </div>
 		
 		<div class="form-group">
             <div class="col-sm-offset-1 col-sm-9">
                 <label>Description de la soirée :</label>            
-                <textarea class="form-control" rows="3" ng-model="description" ng-model="required"></textarea>
+                <textarea class="form-control" rows="3" ng-model="party.description" ng-model="party.required"></textarea>
             </div>
         </div>
 		<h2>Prix de la soirée</h2>
         <div class="form-group">
 		    <div class="col-sm-offset-1 col-sm-4">
                <label class="control-label">soft :</label>
-		    <input type="text" class="form-control" id="" placeholder="prix par personnes en Euros" ng-model="softPrice">
+		    <input type="text" class="form-control" id="" placeholder="prix par personnes en Euros" ng-model="party.softPrice">
 		  </div>
            <div class="col-sm-offset-1 col-sm-4">
                <label class="control-label">alcool :</label>
-		    <input type="text" class="form-control" id="" placeholder="prix par personnes en Euros" ng-model="alcoholPrice">
+		    <input type="text" class="form-control" id="" placeholder="prix par personnes en Euros" ng-model="party.alcoholPrice">
 		  </div>
         </div>
         
         <div class="form-group">
           <div class="col-sm-offset-1 col-sm-4">
                <label class="control-label">repas :</label>
-		    <input type="text" class="form-control" id="" placeholder="prix par personnes en Euros" ng-model="toEatPrice">
+		    <input type="text" class="form-control" id="" placeholder="prix par personnes en Euros" ng-model="party.toEatPrice">
 		  </div>
       
        </div>
         <div class="form-group">
           <div class="col-sm-offset-1 col-sm-4">
-        <input type="checkbox" ng-model="price" checked/>
+        <input type="checkbox" ng-model="party.price" checked/>
            Ou sinon laisser un prix libre par personne 
         </div>    
        </div>
@@ -77,7 +77,7 @@
     
     <div class="form-group">
         <div class="col-sm-offset-5">
-            <button type="submit" class="btnW" ng-click="send()"><strong>Valider</strong></button>
+            <button type="submit" ng-click="createParty(party)" class="btnW"><strong>Valider</strong></button>
         </div>
         
     </div>
