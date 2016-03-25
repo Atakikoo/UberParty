@@ -35,7 +35,7 @@ function createCtrl( $scope, createService, $location ){
         
         createService.create(party).then(function(res){
             
-            if (res.data != $error){
+            if (res.data){
                 alert("soirée créé")
 			}
 			//ERREUR

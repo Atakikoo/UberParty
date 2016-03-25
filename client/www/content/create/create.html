@@ -33,12 +33,12 @@
 		
 		<div class="form-group">
 		    <div class="col-sm-offset-1 col-sm-4">
-               <label class="control-label">organisateur :</label>
-		    <input type="text" class="form-control" id="" placeholder="" ng-model="party.promoter">
+               <label class="control-label">Organisateur(s) :</label>
+		    <input type="text" class="form-control" id="" placeholder="Si il y a plusieurs organisateurs, merci de séparer les noms par une virgule" ng-model="party.promoter">
 		  </div>
         <div class="col-sm-offset-1 col-sm-4">
-               <label class="control-label">nombre de places (ou 00 pour illimité):</label>
-		    <input type="number" class="form-control" id="" placeholder="" ng-model="party.nbPlace" ng-model="party.required">
+               <label class="control-label">Nombre de places (ou 00 pour illimité):</label>
+		    <input type="number" class="form-control" id="" placeholder="00" ng-model="party.nbPlace" ng-model="party.required">
 		  </div>
         </div>
 		
@@ -48,29 +48,29 @@
                 <textarea class="form-control" rows="3" ng-model="party.description" ng-model="party.required"></textarea>
             </div>
         </div>
-		<h2>Prix de la soirée</h2>
+		<h2>Prix de la soirée</h2> <h4>(par personne)</h4>
         <div class="form-group">
 		    <div class="col-sm-offset-1 col-sm-4">
-               <label class="control-label">soft :</label>
-		    <input type="text" class="form-control" id="" placeholder="prix par personnes en Euros" ng-model="party.softPrice">
+               <label class="control-label">Soft :</label>
+		    <input type="number" class="form-control" id="" placeholder="0" ng-model="party.softPrice">
 		  </div>
            <div class="col-sm-offset-1 col-sm-4">
-               <label class="control-label">alcool :</label>
-		    <input type="text" class="form-control" id="" placeholder="prix par personnes en Euros" ng-model="party.alcoholPrice">
+               <label class="control-label">Alcool :</label>
+		    <input type="number" class="form-control" id="" placeholder="0" ng-model="party.alcoholPrice">
 		  </div>
         </div>
         
         <div class="form-group">
           <div class="col-sm-offset-1 col-sm-4">
-               <label class="control-label">repas :</label>
-		    <input type="text" class="form-control" id="" placeholder="prix par personnes en Euros" ng-model="party.toEatPrice">
+               <label class="control-label">Repas :</label>
+		    <input type="number" class="form-control" id="" placeholder="0" ng-model="party.toEatPrice">
 		  </div>
       
        </div>
         <div class="form-group">
           <div class="col-sm-offset-1 col-sm-4">
-        <input type="checkbox" ng-model="party.price" checked/>
-           Ou sinon laisser un prix libre par personne 
+        <input type="checkbox" ng-model="party.freePrice" checked/>
+           Ou prix libre par personne 
         </div>    
        </div>
     </form>

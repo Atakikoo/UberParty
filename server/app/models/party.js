@@ -4,11 +4,12 @@ var mongoose = require('mongoose');
 
 var partySchema = new mongoose.Schema({
   //photo: String,
-  promoter: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
-      required: true
-  },
+  promoter: { type: String, required: true, unique: true},
+  // {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: 'User',
+  //     required: true
+  // },
   date: Date, // hour can be put with the datepicker
   name: { type: String, required: true},
   description: { type: String, required: true},
@@ -38,8 +39,8 @@ var Party = {
 
     findAll: function(req, res) {
         Party.model.find({})
-        .populate("promoter", "-password")
-        .populate("entrant.user", "-password")
+        // .populate("promoter", "-password")
+        // .populate("entrant.user", "-password")
         .exec(function(err,parties) {
             res.json(parties);
     });
