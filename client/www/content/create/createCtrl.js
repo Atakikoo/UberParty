@@ -8,32 +8,12 @@ function createCtrl( $scope, createService, $location ){
 
     // document.getElementById('datePicker').valueAsDate = new Date();
     
-    $scope.createParty = function(party){
+    $scope.createParty = function(){
         debugger
-        $scope.party = {
-            name: party.name,
-            date: party.date,
-            promoter: party.promoter,
-            nbPlace: party.nbPlace,
-            description: party.description,
-            softPrice: party.softPrice,
-            alcoholPrice: party.alcoholPrice,
-            toEatPrice: party.toEatPrice,
-            price: party.price
-        };
-        // data.name = $scope.name;
-        // data.date = $scope.date;
-        // data.promoter = $scope.promoter;
-        // data.nbPlace = $scope.nbPlace;
-        // data.description = $scope.description;
-        // data.softPrice = $scope.softPrice;
-        // data.alcoholPrice = $scope.alcoholPrice;
-        // data.toEatPrice = $scope.toEatPrice;
-        // data.price = $scope.price;
 
-        console.log(party);
+        console.log($scope.party);
         
-        createService.create(party).then(function(res){
+        createService.create($scope.party).then(function(res){
             
             if (res.data){
                 alert("soirée créé")

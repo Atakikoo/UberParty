@@ -5,82 +5,117 @@
 
 <div class="">
 
-	<form class="form-horizontal" name="party" ng-submit="createParty(party)">
+	<form class="form-horizontal" name="party">
         
 		
 		<div class="form-group">
             <div class="col-sm-offset-1 col-sm-4">
-               <label class="control-label">
+              <label class="control-label">
                   Nom de la soirée :</label>
-        		      <input type="text" 
-                      class="form-control" 
-                      id="" 
-                      placeholder="Donnez un nom à votre soirée" 
-                      ng-model="party.name" 
-                      required>
+      		    <input type="text" 
+                  class="form-control" 
+                  id="" 
+                  placeholder="Donnez un nom à votre soirée" 
+                  ng-model="party.name" 
+                  required>
 		        </div>
         
     		    <div class="col-sm-offset-1 col-sm-4">
-                   <label class="control-label">Date de la soirée :</label>
-    		           <input
-                      type="date"
-                      class="form-control"
-                      placeholder="yyyy-MM-dd" 
-                      required 
-                      ng-model="party.date">
+               <label class="control-label">Date de la soirée :</label>
+		           <input
+                  type="date"
+                  class="form-control"
+                  placeholder="yyyy-MM-dd" 
+                  required 
+                  ng-model="party.date">
     		    </div>
 		</div> <!-- end form group -->
 		
 		<div class="form-group">
 		    <div class="col-sm-offset-1 col-sm-4">
-               <label class="control-label">Organisateur(s) :</label>
-		    <input type="text" class="form-control" id="" placeholder="Si il y a plusieurs organisateurs, merci de séparer les noms par une virgule" ng-model="party.promoter">
-		  </div>
+            <label class="control-label">Organisateur(s) :</label>
+		        <input type="text"
+            class="form-control"
+            placeholder="Si il y a plusieurs organisateurs, merci de séparer les noms par une virgule" 
+            ng-model="party.promoter">
+		    </div>
         <div class="col-sm-offset-1 col-sm-4">
-               <label class="control-label">Nombre de places (ou 00 pour illimité):</label>
-		    <input type="number" class="form-control" id="" placeholder="00" ng-model="party.nbPlace" ng-model="party.required">
-		  </div>
-        </div>
+            <label class="control-label">Nombre de places (ou 00 pour illimité):</label>
+		        <input type="number"
+            class="form-control" 
+            placeholder="00"
+            ng-model="party.nbPlace"
+            ng-model="party.required">
+		    </div>
+    </div>
 		
 		<div class="form-group">
-            <div class="col-sm-offset-1 col-sm-9">
-                <label>Description de la soirée :</label>            
-                <textarea class="form-control" rows="3" ng-model="party.description" ng-model="party.required"></textarea>
+        <div class="col-sm-offset-1 col-sm-9">
+            <label>Description de la soirée :</label>            
+            <textarea 
+            class="form-control" 
+            rows="3" 
+            ng-model="party.description"
+            ng-model="party.required"></textarea>
             </div>
         </div>
-		<h2>Prix de la soirée</h2> <h4>(par personne)</h4>
+
+		    <h2>Prix de la soirée</h2>
+        <h4>(par personne)</h4>
+
         <div class="form-group">
-		    <div class="col-sm-offset-1 col-sm-4">
-               <label class="control-label">Soft :</label>
-		    <input type="number" class="form-control" id="" placeholder="0" ng-model="party.softPrice">
-		  </div>
-           <div class="col-sm-offset-1 col-sm-4">
-               <label class="control-label">Alcool :</label>
-		    <input type="number" class="form-control" id="" placeholder="0" ng-model="party.alcoholPrice">
-		  </div>
+  		    <div class="col-sm-offset-1 col-sm-4">
+              <label class="control-label">Soft :</label>
+  		      <input 
+            type="number" 
+            class="form-control"
+            placeholder="0"
+            ng-model="party.softPrice">
+  		    </div>
+
+          <div class="col-sm-offset-1 col-sm-4">
+              <label class="control-label">Alcool :</label>
+		          <input
+              type="number"
+              class="form-control"
+              placeholder="0"
+              ng-model="party.alcoholPrice">
+		      </div>
         </div>
         
         <div class="form-group">
           <div class="col-sm-offset-1 col-sm-4">
-               <label class="control-label">Repas :</label>
-		    <input type="number" class="form-control" id="" placeholder="0" ng-model="party.toEatPrice">
-		  </div>
-      
+              <label class="control-label">Repas :</label>
+		          <input
+              type="number"
+              class="form-control"
+              placeholder="0"
+              ng-model="party.toEatPrice">
+		      </div>
        </div>
-        <div class="form-group">
+
+
+      <div class="form-group">
           <div class="col-sm-offset-1 col-sm-4">
-        <input type="checkbox" ng-model="party.freePrice" checked/>
+              <input
+              type="checkbox"
+              ng-model="party.freePrice"
+              checked/>
            Ou prix libre par personne 
         </div>    
-       </div>
-    </form>
+      </div>
     
-    <div class="form-group">
-        <div class="col-sm-offset-5">
-            <button type="submit" ng-click="createParty(party)" class="btnW"><strong>Valider</strong></button>
-        </div>
-        
-    </div>
+    
+      <div class="form-group">
+          <div class="col-sm-offset-5">
+              <button
+              type="submit"
+              ng-click="createParty()"
+              class="btnW">
+              <strong>Valider</strong></button>
+          </div>   
+      </div>
+    </form>
     
 </div>
   </ion-content>

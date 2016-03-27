@@ -32,7 +32,8 @@ var app = angular.module('app', ['ionic', 'app.services', 'app.controllers'])
     url: '/login',
     views: {
       'menuContent': {
-        templateUrl: 'content/login/login.html'
+        templateUrl: 'content/login/login.html',
+        controller: 'loginCtrl'
       }
     }
   })

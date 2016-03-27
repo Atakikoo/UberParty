@@ -1,6 +1,8 @@
 // app/models/user.js
 
 var mongoose = require('mongoose');
+var jwt      = require('jsonwebtoken');
+
 
 var userSchema = new mongoose.Schema({
   pseudo:  { type: String, required: true, unique: true },
