@@ -1,13 +1,6 @@
 function createCtrl( $scope, createService, $location ){
-    
-    // Date.prototype.toDateInputValue = function() {
-    //     var local = new Date(this);
-    //     local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
-    //     return local.toJSON().slice(0,10);
-    // }; //end function
 
-    // document.getElementById('datePicker').valueAsDate = new Date();
-    
+    $scope.party= {};
     $scope.createParty = function(){
         debugger
 
@@ -17,6 +10,7 @@ function createCtrl( $scope, createService, $location ){
             
             if (res.data){
                 alert("soirée créé")
+                $location.path('/parties');
 			}
 			//ERREUR
 			else{

@@ -6,42 +6,48 @@
   <button class="button" ng-click="switchDisplay()">{{switchBtn}}</button>
 
 
-   <form ng-if="switchState" ng-submit="doSignUp()">
+   <form ng-if="switchState" name="userForm">
       <div class="list">
         <label class="item item-input">
           <span class="input-label">Username</span>
-          <input type="text" ng-model="login.username">
+          <input type="text" 
+          ng-model="user.username"
+          required>
         </label>
         <label class="item item-input">
           <span class="input-label">Password</span>
-          <input type="password" ng-model="login.password">
+          <input type="password"
+          ng-model="user.password"
+          required>
         </label>
         <label class="item item-input">
-          <span class="input-label">Ckeck password</span>
-          <input type="password" ng-model="login.ckeckPassword">
+          <span class="input-label">Confirm password</span>
+          <input type="password" ng-model="confirmPassword">
         </label>
 
         <label class="item item-input">
           <span class="input-label">Your email</span>
-          <input type="email" ng-model="login.email">
+          <input type="email"
+          ng-model="user.email"
+          required>
         </label>
 
         <label class="item">
-          <button class="button button-block button-positive" type="submit">Connect</button>
+          <button class="button button-block button-positive" type="submit" ng-click="doSignUp()">Connect</button>
         </label>
       </div>
     </form>
 
 
-    <form ng-if="!switchState" ng-submit="doLogin()">
+    <form ng-if="!switchState" ng-submit="doLogin()" name="user">
       <div class="list">
         <label class="item item-input">
           <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
+          <input type="text" ng-model="user.username">
         </label>
         <label class="item item-input">
           <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
+          <input type="password" ng-model="user.password">
         </label>
         <label class="item">
           <button class="button button-block button-positive" type="submit">Connect</button>

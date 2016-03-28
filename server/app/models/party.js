@@ -22,8 +22,8 @@ var partySchema = new mongoose.Schema({
   toEatPrice: Number,
   freePrice: Boolean,
   budget: Number,
-  comment: [String],
-  toBring: [String],
+  // comment: [String],
+  // toBring: [String],
   registration: [String],
   paid: [String]
 });

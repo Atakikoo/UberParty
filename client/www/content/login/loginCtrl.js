@@ -15,4 +15,25 @@ function loginCtrl( $scope, loginService, $location ){
 		}
 	} // end switch function
 
+	$scope.user = {};
+	$scope.doSignUp = function() {
+
+		loginService.create($scope.user).then(function(res){
+            
+            if (res.status == 200){
+                $location.path('/app/parties');
+			}
+			//ERREUR
+			else{
+                alert("Oups, une erreur s'est produite!");
+                $location.path('/app/login');
+			}
+            
+         }); //end login service
+	}
+
+	$scope.doLogin = function() {
+
+	}
+
 } // end ctrl 

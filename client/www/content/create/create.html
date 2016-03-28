@@ -5,7 +5,7 @@
 
 <div class="">
 
-	<form class="form-horizontal" name="party">
+	<form class="form-horizontal" name="partyForm">
         
 		
 		<div class="form-group">
@@ -13,8 +13,7 @@
               <label class="control-label">
                   Nom de la soirée :</label>
       		    <input type="text" 
-                  class="form-control" 
-                  id="" 
+                  class="form-control"
                   placeholder="Donnez un nom à votre soirée" 
                   ng-model="party.name" 
                   required>
@@ -45,7 +44,7 @@
             class="form-control" 
             placeholder="00"
             ng-model="party.nbPlace"
-            ng-model="party.required">
+            required>
 		    </div>
     </div>
 		
@@ -56,7 +55,7 @@
             class="form-control" 
             rows="3" 
             ng-model="party.description"
-            ng-model="party.required"></textarea>
+            required></textarea>
             </div>
         </div>
 
@@ -115,6 +114,7 @@
               <strong>Valider</strong></button>
           </div>   
       </div>
+
     </form>
     
 </div>

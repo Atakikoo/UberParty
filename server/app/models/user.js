@@ -5,8 +5,13 @@ var jwt      = require('jsonwebtoken');
 
 
 var userSchema = new mongoose.Schema({
-  pseudo:  { type: String, required: true, unique: true },
+  username:  { type: String, required: true, unique: true },
   password: { type: String, required: true },
+  email: { type: String,
+           trim: true,
+           unique: true,
+           required: 'Email address is required',
+           match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'] },
   admin: { type: Boolean, default: false }
 })
 
@@ -17,10 +22,10 @@ var User =  {
   /*-----USER CRUD-----*/
 
     // get one user
-    find: function(pseudo, password) {
+    find: function(username, password) {
     		User.model.findOne({
-    			pseudo: pseudo,
-            password: password
+    			username: username,
+          password: password
     		});
     },
 
@@ -38,17 +43,20 @@ var User =  {
 
     create: function(req, res) {
     		User.model.create({
-    			pseudo: req.body.pseudo,
-  			password: req.body.password
+    			username: req.body.username,
+  			  password: req.body.password,
+          email: req.body.email
+        }, function(err, user) {
+        res.sendStatus(200);
     		});
     },
 
     update: function(req, res) {
     		User.model.findByIdAndUpdate(req.params.id, {
-	    		pseudo: req.body.pseudo,
+	    		username: req.body.username,
 	    		password: req.body.password
     		}, function(err, user) {
-    		res.senStatus(200);
+    		res.sendStatus(200);
     	});
     },
 
@@ -69,7 +77,7 @@ var User =  {
   // // create user
   // app.post('/uberParty/users', function(req, res) {
   //   User.create({
-  //     pseudo: req.body.pseudo,
+  //     username: req.body.username,
   //     password: req.body.password,
   //   }, function(err, user) {
   //     if (err)
@@ -92,8 +100,8 @@ var User =  {
   // // update user 
   // app.put('/uberParty/users/:user_id', function(req, res){
   //   var data = {};
-  //   if (req.body.pseudo)
-  //     data.pseudo = req.body.pseudo;
+  //   if (req.body.username)
+  //     data.username = req.body.username;
   //   if (req.body.password)
   //     data.password = req.body.password;
 
@@ -111,7 +119,7 @@ var User =  {
   //   //checkUser
   //   app.post('/uberParty/login', function(req, res) {
   //   User.find({
-  //     pseudo: req.body.pseudo,
+  //     username: req.body.username,
   //     password: req.body.password
   //   }, function(err, user){
   //     if (err || user.length == 0)
