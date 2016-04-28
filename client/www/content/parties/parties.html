@@ -1,5 +1,15 @@
 <ion-view view-title="Apéros">
   <ion-content>
     <h1>Tous les apéros	(⌒ω⌒)ﾉ</h1>
+
+
+    <ion-list>
+        <ion-item collection-repeat="party in parties">
+        {{party.name}}
+        {{party.date}}
+        {{party.description}}
+        </ion-item>
+    </ion-list>
+
   </ion-content>
 </ion-view>

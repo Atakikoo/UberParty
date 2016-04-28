@@ -21,7 +21,7 @@ var app = angular.module('app', ['ionic', 'app.services', 'app.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'content/app/menu.html',

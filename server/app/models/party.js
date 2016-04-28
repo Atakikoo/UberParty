@@ -1,10 +1,11 @@
 // app/models/party.js
 
 var mongoose = require('mongoose');
+var Party = require('../models/party.js');
 
 var partySchema = new mongoose.Schema({
   //photo: String,
-  promoter: { type: String, required: true, unique: true},
+  promoter: String,
   // {
   //     type: mongoose.Schema.Types.ObjectId,
   //     ref: 'User',
@@ -39,7 +40,7 @@ var Party = {
 
     findAll: function(req, res) {
         Party.model.find({})
-        // .populate("promoter", "-password")
+         //.populate("promoter", "-password")
         // .populate("entrant.user", "-password")
         .exec(function(err,parties) {
             res.json(parties);
@@ -54,29 +55,17 @@ var Party = {
 
     // create party
     create: function(req, res) {
-      Party.model.create({
-      photo: req.body.photo,
-      promoter: req.body.promoter,
-      date: req.body.date,
-      name: req.body.name,
-      description: req.body.description,
-      nbPlace: req.body.nbPlace,
-      softPrice: req.body.softPrice,
-      alcoholPrice: req.body.alcoholPrice,
-      toEatPrice: req.body.toEatPrice,
-      freePrice: req.body.freePrice,
-      }, function(err, party) {
+      Party.model.create(req.body, function(err, party) {
         if (err)
           res.send(err);
         res.status(200).end();
-        res.json(party);
       });
     },
 
     // update party
     update: function(req, res) {
       Party.model.findByIdAndUpdate(req.params.id, { $set: {
-          photo: req.body.photo,
+          // photo: req.body.photo,
           date: req.body.date,
           name: req.body.name,
           description: req.body.description,

@@ -8,14 +8,14 @@ function createCtrl( $scope, createService, $location ){
         
         createService.create($scope.party).then(function(res){
             
-            if (res.data){
-                alert("soirée créé")
-                $location.path('/parties');
+            if (res.status == 200){
+                alert("soirée créé");
+                $location.path('app/parties');
 			}
 			//ERREUR
 			else{
                 alert("ich bin hein a grosse erreur");
-                $location.path('/create');
+                $location.path('app/create');
 			}
             
          }); //end create service
