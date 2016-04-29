@@ -50,6 +50,16 @@ textarea:focus, input:focus {
 
 .dark-royal {
 	background-color: #180018;
+	opacity: 0.8;
 }
+
+.checkbox-dark-royal input:before,
+.checkbox-dark-royal .checkbox-icon:before {
+  border-color:  #180018; }
+
+.checkbox-dark-royal input:checked:before,
+.checkbox-dark-royal input:checked + .checkbox-icon:before {
+  background:  #180018;
+  border-color:  #180018; }
 
 /*#6b46e5            #330033   #180018   */
