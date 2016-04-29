@@ -1,122 +1,101 @@
-<ion-view view-title="Créer une soirée">
+<ion-view view-title="Créer une soirée" ">
+
+
   <ion-content>
-    <h2>Créer une soirée</h2>
+    <ion-list>
 
+    	<form name="partyForm">
+            
 
-<div class="">
+                <label class="item item-input">
+          		    <input type="text" 
+                      placeholder="Nom de la soirée" 
+                      ng-model="party.name" 
+                      required>
+    		        </label >
+            
+        		    <label class="item item-input">
+    		           <input
+                      type="date"
+                      required 
+                      ng-model="party.date">
+        		    </label>
 
-	<form class="form-horizontal" name="partyForm">
+            <label class="item item-input">
+		          <input type="text"
+              placeholder="moi" 
+              ng-model="party.promoter">
+            </label>
         
-		
-		<div class="form-group">
-            <div class="col-sm-offset-1 col-sm-4">
-              <label class="control-label">
-                  Nom de la soirée :</label>
-      		    <input type="text" 
+            <label class="item item-input">
+  		        <input type="number"
+              placeholder="de 1 à +"
+              ng-model="party.nbPlace"
+              required>
+            </label
+
+            <div class="card">
+              <div class="item royal item-text-wrap">
+                  <textarea 
+                class="form-control" 
+                rows="3" 
+                placeholder="Description de la soirée"
+                ng-model="party.description"
+                required></textarea>
+               </div>  
+            </div> 
+
+
+    		    <label class="col text-center" >
+              <h5 class="white text-center">Prix de la soirée</h5>
+              <h6 class="white text-center">(par personne)</h6>
+            </label>
+
+      		    <label class="item item-input">
+                <span class="input-label">Soft :</span>
+                <input type="number"
                   class="form-control"
-                  placeholder="Donnez un nom à votre soirée" 
-                  ng-model="party.name" 
-                  required>
-		        </div>
-        
-    		    <div class="col-sm-offset-1 col-sm-4">
-               <label class="control-label">Date de la soirée :</label>
-		           <input
-                  type="date"
+                  placeholder="0"
+                  ng-model="party.softPrice">
+              </label>
+
+              <label class="item item-input">
+                <span class="input-label">Alcool :</span>
+                <input type="number"
                   class="form-control"
-                  placeholder="yyyy-MM-dd" 
-                  required 
-                  ng-model="party.date">
-    		    </div>
-		</div> <!-- end form group -->
-		
-		<div class="form-group">
-		    <div class="col-sm-offset-1 col-sm-4">
-            <label class="control-label">Organisateur(s) :</label>
-		        <input type="text"
-            class="form-control"
-            placeholder="Si il y a plusieurs organisateurs, merci de séparer les noms par une virgule" 
-            ng-model="party.promoter">
-		    </div>
-        <div class="col-sm-offset-1 col-sm-4">
-            <label class="control-label">Nombre de places (ou 00 pour illimité):</label>
-		        <input type="number"
-            class="form-control" 
-            placeholder="00"
-            ng-model="party.nbPlace"
-            required>
-		    </div>
-    </div>
-		
-		<div class="form-group">
-        <div class="col-sm-offset-1 col-sm-9">
-            <label>Description de la soirée :</label>            
-            <textarea 
-            class="form-control" 
-            rows="3" 
-            ng-model="party.description"
-            required></textarea>
-            </div>
-        </div>
+                  placeholder="0"
+                  ng-model="party.alcoholPrice">
+              </label>
 
-		    <h2>Prix de la soirée</h2>
-        <h4>(par personne)</h4>
+              <label class="item item-input">
+                <span class="input-label">Repas :</span>
+                <input type="number"
+                  class="form-control"
+                  placeholder="0"
+                  ng-model="party.toEatPrice">
+              </label>
 
-        <div class="form-group">
-  		    <div class="col-sm-offset-1 col-sm-4">
-              <label class="control-label">Soft :</label>
-  		      <input 
-            type="number" 
-            class="form-control"
-            placeholder="0"
-            ng-model="party.softPrice">
-  		    </div>
+                  <div class="card">
+                    <div class="item item-text-wrap">
+                      <ion-checkbox type="checkbox"
+                          ng-model="party.freePrice"
+                          checked ng-model="filter.dark-royal">
+                            Prix libre par personne
+                      </ion-checkbox> 
+                    </div>
+                  </div>
 
-          <div class="col-sm-offset-1 col-sm-4">
-              <label class="control-label">Alcool :</label>
-		          <input
-              type="number"
-              class="form-control"
-              placeholder="0"
-              ng-model="party.alcoholPrice">
-		      </div>
-        </div>
+                  
+                  <div class="col text-center" >
+                    <button
+                      type="submit"
+                      ng-click="createParty()"
+                      class="button button-large dark-royal borderless validate">Valider
+                   </button>
+                  </div>
+
+        </form>
         
-        <div class="form-group">
-          <div class="col-sm-offset-1 col-sm-4">
-              <label class="control-label">Repas :</label>
-		          <input
-              type="number"
-              class="form-control"
-              placeholder="0"
-              ng-model="party.toEatPrice">
-		      </div>
-       </div>
-
-
-      <div class="form-group">
-          <div class="col-sm-offset-1 col-sm-4">
-              <input
-              type="checkbox"
-              ng-model="party.freePrice"
-              checked/>
-           Ou prix libre par personne 
-        </div>    
-      </div>
-    
-    
-      <div class="form-group">
-          <div class="col-sm-offset-5">
-              <button
-              type="submit"
-              ng-click="createParty()"
-              class="btnW">
-              <strong>Valider</strong></button>
-          </div>   
-      </div>
-
-    </form>
-    
-</div>
+    </ion-list>
   </ion-content>
 </ion-view>

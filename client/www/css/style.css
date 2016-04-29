@@ -1,1 +1,55 @@
 /* Empty. Add your own CSS if you like */
+
+
+ion-content {
+	color: white;
+	background-color: #330033;
+}
+
+
+.item, .item-input {
+	background-color: #996699;
+	color: white;
+
+}
+
+input {
+	color: white;
+}
+
+input::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, .input-label{
+	color: #330033;
+}
+
+textarea:focus, input:focus {
+    color: white;
+}
+
+.borderless{
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+}
+
+.white {
+	color: white;
+}
+
+.validate {
+	color: #6b46e5;
+}
+
+.validate:hover {
+	color: #996699;
+}
+
+.royal, .item-complex .item-content, .item-radio .item-content {
+	background-color: #330033 !important;
+}
+
+.dark-royal {
+	background-color: #180018;
+}
+
+/*#6b46e5            #330033   #180018   */

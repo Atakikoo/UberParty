@@ -1,7 +1,7 @@
 {
-  "name": "ubabati",
+  "name": "Uberparty",
   "version": "1.1.1",
-  "description": "Ubabati: An Ionic project",
+  "description": "Uberparty: Manage parties with your friends",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
