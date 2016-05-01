@@ -10,11 +10,12 @@ ion-content {
 .item, .item-input {
 	background-color: #996699;
 	color: white;
+	border-color: #180018;
 
 }
 
 input {
-	color: white;
+	color: white !important;
 }
 
 input::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, .input-label{
@@ -37,12 +38,10 @@ textarea:focus, input:focus {
 }
 
 .validate {
-	color: #6b46e5;
+	background-color: white;
+	color: #180018;
 }
 
-.validate:hover {
-	color: #996699;
-}
 
 .royal, .item-complex .item-content, .item-radio .item-content {
 	background-color: #330033 !important;
@@ -61,5 +60,15 @@ textarea:focus, input:focus {
 .checkbox-dark-royal input:checked + .checkbox-icon:before {
   background:  #180018;
   border-color:  #180018; }
+
+ .borderRadius{
+ 	    border-radius: 5px !important;
+ }
+
+ .menuHeight {
+ 	height: 150px;
+ 	background: #fff url("/img/uberPartySmall.png") no-repeat;
+ 	background-size: cover;
+ }
 
 /*#6b46e5            #330033   #180018   */

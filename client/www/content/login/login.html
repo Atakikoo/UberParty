@@ -1,39 +1,34 @@
 <ion-view view-title="{{title}}">
-  <ion-header-bar>
-  </ion-header-bar>
   <ion-content>
-
-  <button class="button" ng-click="switchDisplay()">{{switchBtn}}</button>
-
 
    <form ng-if="switchState" name="userForm">
       <div class="list">
         <label class="item item-input">
-          <span class="input-label">Username</span>
+          <span class="input-label">Pseudo</span>
           <input type="text" 
           ng-model="user.username"
           required>
         </label>
         <label class="item item-input">
-          <span class="input-label">Password</span>
+          <span class="input-label">Mot de passe</span>
           <input type="password"
           ng-model="user.password"
           required>
         </label>
         <label class="item item-input">
-          <span class="input-label">Confirm password</span>
+          <span class="input-label">Confirmes ton mot de passe</span>
           <input type="password" ng-model="confirmPassword">
         </label>
 
         <label class="item item-input">
-          <span class="input-label">Your email</span>
+          <span class="input-label">Ton email</span>
           <input type="email"
           ng-model="user.email"
           required>
         </label>
 
         <label class="item">
-          <button class="button button-block button-positive" type="submit" ng-click="doSignUp()">Connect</button>
+          <button class="button button-block validate" type="submit" ng-click="doSignUp()">Valider</button>
         </label>
       </div>
     </form>
@@ -42,18 +37,26 @@
     <form ng-if="!switchState" ng-submit="doLogin()" name="user">
       <div class="list">
         <label class="item item-input">
-          <span class="input-label">Username</span>
+          <span class="input-label">Pseudo</span>
           <input type="text" ng-model="user.username">
         </label>
         <label class="item item-input">
-          <span class="input-label">Password</span>
+          <span class="input-label">Mot de passe</span>
           <input type="password" ng-model="user.password">
         </label>
         <label class="item">
-          <button class="button button-block button-positive" type="submit">Connect</button>
+          <button class="button button-block validate" type="submit">Se connecter</button>
         </label>
       </div>
-      <a href="">Mot de passe oublié?</a>
     </form>
+
+      <button class="button button-block dark-royal borderless" ng-click="switchDisplay()">
+        <h5 class="white">{{switchBtn}}</h5>
+      </button>
+
+      <button class="button button-block dark-royal borderless" >
+        <h6 class="white">Mot de passe oublié?</h6>
+      </button>
+
   </ion-content>
 </ion-view>

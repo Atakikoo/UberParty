@@ -1,17 +1,17 @@
 function loginCtrl( $scope, loginService, $location ){
 
-	$scope.title = 'Login';
-	$scope.switchBtn = "Sign Up";
+	$scope.title = 'Se connecter';
+	$scope.switchBtn = "Créer un compte";
 
 	$scope.switchDisplay = function() {
 		if(!$scope.switchState) {
 			$scope.switchState = !$scope.switchState;
-			$scope.title = "Sign Up";
-			$scope.switchBtn = "Login";
+			$scope.title = "Créer un compte";
+			$scope.switchBtn = "Se connecter";
 		} else {
 			$scope.switchState = !$scope.switchState;
-			$scope.title = "Login";
-			$scope.switchBtn = "Sign Up";
+			$scope.title = "Se connecter";
+			$scope.switchBtn = "Créer un compte";
 		}
 	} // end switch function
 
