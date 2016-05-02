@@ -71,4 +71,8 @@ textarea:focus, input:focus {
  	background-size: cover;
  }
 
-/*#6b46e5            #330033   #180018   */
+.royalTypo {
+	color:  #996699;
+ }
+
+/*#6b46e5     996699       #330033   #180018   */
